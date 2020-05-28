@@ -33,6 +33,32 @@
         font-weight: bold;
         font-size: 13px;
       }
+      #overlay{
+          height: 100%;
+          width: 100%;
+          position:absolute;
+          z-index: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      html,body{
+        width: 100%;
+        height: 100%;
+      }
+      #vid{
+        visibility: hidden;
+      }
+      #click{
+        width: 300px;
+        height: 100px;
+      }
+      #click:hover{
+        cursor: pointer;
+      }
+      #main{
+        display: none;
+      }
     </style>
 
     <link href="css/style1.css" type="text/css" rel="stylesheet" />
@@ -50,13 +76,17 @@
   </head>
 
   <body>
-    <div style="padding-top: 10px;" class="section">
+    
+    <div id="overlay" >
+      <button onclick="clicked()" id="click" >Click here  for a surprise</button>
+    </div>
+    <div id='main' style="padding-top: 10px;" class="section">
 		<div class="columns">
 			<div class="column is-12">
 				<center>
-					<audio controls loop>
-						<source src="song.mp3" type="audio/mpeg">
-					</audio>
+					 <video controls loop id='vid'  >
+              <source src="song.mp4" type="video/mp4"  >
+          </video>
 					<br />
 					<span class="disc">Disclaimer : Hey Man, This time again stuck with Autoplay thing, Just Play it Manually, Scroll your screen and Enjoy! For Better view Use Laptop </span>
 				</center>
@@ -129,7 +159,18 @@
       } else {
         adjustCodePosition();
         $("#code").typewriter();
+      
+      }
+      function play(){
+        document.getElementById('vid').play();
+       }
+      
+      function clicked(){
+        document.getElementById('overlay').style.display = 'none'
+        document.getElementById('main').style.display = 'initial'
+        play()
       }
     </script>
+    
   </body>
 </html>
