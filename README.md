@@ -8,8 +8,6 @@
 
 > #### Click [here](https://smilegupta.github.io/ShivanshuBday/) to view live demo!
 
-
------
 ## Technology Stack Used
 
 ![HTML](https://img.shields.io/badge/frontend-html-orange.svg?logo=html5&style=flat-square) 
